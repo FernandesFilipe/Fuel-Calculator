@@ -5,24 +5,24 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class ColetarDados1 : AppCompatActivity() {
 
-    lateinit var button1:Button
+    lateinit var button2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_coletar_dados1)
 
-        button1 = findViewById<Button>(R.id.button1)
-        button1.setOnClickListener {
-            val intent = Intent (this, ColetarDados1::class.java)
+        button2 = findViewById<Button>(R.id.button2)
+        button2.setOnClickListener {
+            val intent = Intent(this, ColetarDados2::class.java)
             startActivity(intent)
+
         }
     }
 }
-
-
