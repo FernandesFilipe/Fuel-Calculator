@@ -7,7 +7,13 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="horizontal"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/greenoff">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/png1"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -18,7 +24,7 @@
         android:textSize="25dp"
         android:orientation="horizontal"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/green"
         android:text="Calculadora de gasto de combustivel!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Iniciar"
+        android:textColor="@color/font"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="179dp" />

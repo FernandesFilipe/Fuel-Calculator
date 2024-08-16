@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FuelC"
         tools:targetApi="31">
         <activity
+            android:name=".ColetarDados3"
+            android:exported="false" />
+        <activity
             android:name=".ColetarDados2"
             android:exported="false" />
         <activity
