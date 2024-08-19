@@ -25,14 +25,15 @@ class ColetarDados2 : AppCompatActivity() {
         val  tvlabel2= intent.getFloatExtra("tvConst", 0.1f)
 
         button3.setOnClickListener {
-            val intent = Intent (this,ColetarDados3::class.java)
-            val preco= intent.getFloatExtra("KEY_RESULT_FUEL", 0.1f)
-            startActivity(intent)
+            val intent = Intent (this,ColetarDados2::class.java)
+            val preco = intent.getFloatExtra("precoC", 0.1f)
+            //val  tvlabel2= intent.getFloatExtra("tvConst", 0.1f)
             intent.putExtra("KEY_RESULT_FUEL2", tvlabel2)
                 .apply {
                     putExtra("precoC",preco)
                     putExtra("tvConst", tvlabel2)
                 }
+            startActivity(intent)
         }
     }
 }

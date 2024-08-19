@@ -25,8 +25,10 @@ class ColetarDados1 : AppCompatActivity() {
         val preco = intent.getFloatExtra("precoC", 0.1f)
 
         button2.setOnClickListener {
-            val intent = Intent(this, ColetarDados2::class.java)
+            val intent = Intent(this, ColetarDados1::class.java)
+
             intent.putExtra("KEY_RESULT_FUEL", preco)
+
                 .apply {
                     putExtra("precoC",preco)
                 }
