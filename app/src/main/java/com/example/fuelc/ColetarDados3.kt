@@ -21,18 +21,21 @@ class ColetarDados3 : AppCompatActivity() {
 
         button4 = findViewById<Button>(R.id.button4)
 
-        val Dist = intent.getFloatExtra("Dist_F",0.1F)
+        val dist = intent.getFloatExtra("Dist_F",0.1F)
 
         button4.setOnClickListener {
-            val intent = Intent (this,ColetarDados3::class.java)
-            val preco = intent.getFloatExtra("precoC", 0.1f)
-            val  tvlabel2= intent.getFloatExtra("tvConst", 0.1f)
+            //serve para indicar para qual tela vai passar
+            val intent = Intent (this, Result_Activity::class.java)
+            //serve para identificar oque quer resgatar
+            val preco = intent.getFloatExtra("KEY_RESULT_FUEL", 0.1f)
+            val  tvlabel2= intent.getFloatExtra("KEY_RESULT_FUEL2", 0.1f)
             //val Dist = intent.getFloatExtra("Dist_F",0.1f)
-            intent.putExtra("KEY_RESULT_FUEL3",Dist)
+            //serve para criar chave
+            intent.putExtra("KEY_RESULT_FUEL3",dist)
                 .apply {
-                    putExtra("preco_C", preco)
+                    putExtra("precoC", preco)
                     putExtra("TvConst",tvlabel2)
-                    putExtra("Dist_F",Dist)
+                    putExtra("Dist_F",dist)
                 }
 
 
