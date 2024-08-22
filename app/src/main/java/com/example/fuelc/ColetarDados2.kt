@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-const val KEY_RESULT_FUEL =  "ResultActivity.KEY_FUEL"
 
 class ColetarDados2 : AppCompatActivity() {
 
@@ -22,18 +21,20 @@ class ColetarDados2 : AppCompatActivity() {
 
         button3=findViewById<Button>(R.id.button3)
 
-        val  tvlabel2= intent.getFloatExtra("tvConst", 0.1f)
+        val preco = intent.getFloatExtra("KEY_RESULT_FUEL", 0f)
+        val  tvlabel2= intent.getFloatExtra("KEY_RESULT_FUEL2", 0f)
 
         button3.setOnClickListener {
             val intent = Intent (this,ColetarDados3::class.java)
-            val preco = intent.getFloatExtra("KEY_RESULT_FUEL", 0.1f)
             //val  tvlabel2= intent.getFloatExtra("tvConst", 0.1f)
+            intent.putExtra("KEY_RESULT_FUEL", preco)
             intent.putExtra("KEY_RESULT_FUEL2", tvlabel2)
                 .apply {
-                    putExtra("precoC",preco)
-                    putExtra("tvConst", tvlabel2)
+                    putExtra("KEY_RESULT_FUEL",preco)
+                    putExtra("KEY_RESULT_FUEL2", tvlabel2)
                 }
             startActivity(intent)
+
         }
     }
 }
