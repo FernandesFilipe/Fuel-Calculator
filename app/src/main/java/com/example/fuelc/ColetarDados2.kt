@@ -26,7 +26,6 @@ class ColetarDados2 : AppCompatActivity() {
 
         button3.setOnClickListener {
             val intent = Intent (this,ColetarDados3::class.java)
-            //val  tvlabel2= intent.getFloatExtra("tvConst", 0.1f)
             intent.putExtra("KEY_RESULT_FUEL", preco)
             intent.putExtra("KEY_RESULT_FUEL2", tvlabel2)
                 .apply {
