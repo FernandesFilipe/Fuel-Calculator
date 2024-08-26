@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
 
 class ColetarDados2 : AppCompatActivity() {
@@ -21,16 +22,16 @@ class ColetarDados2 : AppCompatActivity() {
 
         button3=findViewById<Button>(R.id.button3)
 
-        val preco = intent.getFloatExtra("KEY_RESULT_FUEL", 0f)
-        val  tvlabel2= intent.getFloatExtra("KEY_RESULT_FUEL2", 0f)
+        val tvlabel2 = findViewById<TextInputEditText>(R.id.tv_label2)
+
+        val preco = intent.getFloatExtra("KEY_RESULT_FUEL",0f)
 
         button3.setOnClickListener {
+            val tvlabel : Float = tvlabel2.text.toString().toFloat()
             val intent = Intent (this,ColetarDados3::class.java)
-            intent.putExtra("KEY_RESULT_FUEL", preco)
-            intent.putExtra("KEY_RESULT_FUEL2", tvlabel2)
                 .apply {
                     putExtra("KEY_RESULT_FUEL",preco)
-                    putExtra("KEY_RESULT_FUEL2", tvlabel2)
+                    putExtra("KEY_RESULT_FUEL2", tvlabel)
                 }
             startActivity(intent)
 

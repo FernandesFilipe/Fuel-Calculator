@@ -8,12 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.color.DynamicColors.Precondition
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class ColetarDados1 : AppCompatActivity() {
 
     lateinit var button2: Button
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,29 +23,29 @@ class ColetarDados1 : AppCompatActivity() {
 
         button2 = findViewById<Button>(R.id.button2)
 
-        val preco = intent.getFloatExtra("KEY_RESULT_FUEL", 0f)
+        val precoc = findViewById<TextInputEditText>(R.id.preco)
 
         button2.setOnClickListener {
-            val intent = Intent(this, ColetarDados2::class.java)
+            val precocom : String = precoc.text.toString()
 
-            intent.putExtra("KEY_RESULT_FUEL", preco)
+            if (precocom ==""){
+                Snackbar
+                    .make (
+                        precoc,
+                        "Preencha todos os campos" ,
+                        Snackbar.LENGTH_LONG
+                    )
+                    .show()
+            }else {
+                val precocombustivel: Float = precoc.text.toString().toFloat()
+                val intent = Intent(this, ColetarDados2::class.java)
 
-                .apply {
-                    putExtra("KEY_RESULT_FUEL",preco)
-                }
-            startActivity(intent)
+                    .apply {
+                        putExtra("KEY_RESULT_FUEL", precocombustivel)
+                    }
+                startActivity(intent)
+            }
         }
     }
 }
 
-
-
-
-
-
-
-
-
-
-//intent.putExtra("key", Comb.toString())
-//intent.putExtra("key", Comb.toString())
