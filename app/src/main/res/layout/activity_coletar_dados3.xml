@@ -10,9 +10,10 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Button"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="15dp"
+        android:textColor="@color/green"
         android:text="Distância até o seu destino"
         android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
@@ -34,8 +36,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/border_radius"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,8 +47,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Dist"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex: 300 km " />
+            android:layout_height="match_parent"
+            android:hint="Ex: 300 km "
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
