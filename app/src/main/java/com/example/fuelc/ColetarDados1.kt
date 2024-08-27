@@ -3,6 +3,7 @@ package com.example.fuelc
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
@@ -21,6 +22,11 @@ class ColetarDados1 : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_coletar_dados1)
 
+        val btnvoltar1 = findViewById<ImageView>(R.id.btn1)
+        btnvoltar1.setOnClickListener{
+            finish()
+        }
+
         button2 = findViewById<Button>(R.id.button2)
 
         val precoc = findViewById<TextInputEditText>(R.id.preco)
@@ -38,6 +44,7 @@ class ColetarDados1 : AppCompatActivity() {
                     .show()
             }else {
                 val precocombustivel: Float = precoc.text.toString().toFloat()
+
                 val intent = Intent(this, ColetarDados2::class.java)
 
                     .apply {
