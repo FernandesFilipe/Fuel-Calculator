@@ -32,9 +32,10 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="120dp"
         android:src="@drawable/png2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,6 +1,8 @@
 package com.example.fuelc
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -40,11 +42,39 @@ class Result_Activity : AppCompatActivity() {
         val result = dist / tvlabel
         val resultado = result * precocombustivel
 
-        resulttv.text = resultado.toString()
-        tvpreco.text = precocombustivel.toString()
-        tvcombustivel.text = tvlabel.toString()
-        tvquilome.text = dist.toString()
+        val Dista = if (dist==dist.toInt().toFloat()){
+            dist.toInt().toString()
+        } else {
+            dist.toString()
+        }
 
+        val Tvlabel = if (tvlabel==tvlabel.toInt().toFloat()){
+            tvlabel.toInt().toString()
+        } else {
+            tvlabel.toString()
+        }
+
+        val Precocombustivel = if (precocombustivel == precocombustivel.toInt().toFloat()) {
+            precocombustivel.toInt().toString()
+        } else {
+            precocombustivel.toString()
+        }
+
+        val Resultado =  if (resultado == resultado.toInt().toFloat()){
+            resultado.toInt().toString()
+        } else {
+            resultado.toString()
+        }
+
+        resulttv.text = Resultado
+        tvpreco.text = Precocombustivel
+        tvcombustivel.text = Tvlabel
+        tvquilome.text = Dista
+
+        val buttonvoltar5 = findViewById<Button>(R.id.button5)
+        buttonvoltar5.setOnClickListener{
+            val Intent = Intent(this,MainActivity::class.java)
+            startActivity(Intent)
+        }
     }
-
 }
