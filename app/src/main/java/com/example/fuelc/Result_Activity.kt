@@ -64,6 +64,7 @@ class Result_Activity : AppCompatActivity() {
             resultado.toInt().toString()
         } else {
             resultado.toString()
+
         }
 
         resulttv.text = Resultado

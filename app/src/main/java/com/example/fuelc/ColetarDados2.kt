@@ -28,7 +28,6 @@ class ColetarDados2 : AppCompatActivity() {
         }
 
         button3=findViewById<Button>(R.id.button3)
-
         val tvlabel2 = findViewById<TextInputEditText>(R.id.tv_label2)
 
         val preco = intent.getFloatExtra("KEY_RESULT_FUEL",0f)
